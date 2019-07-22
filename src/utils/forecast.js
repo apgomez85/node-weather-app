@@ -13,7 +13,9 @@ const forecast = (latitude, longitude, callback) => {
         body.daily.data[0].summary +
           ` It is currently ${body.currently.temperature} degrees. There is a ${
             body.currently.precipProbability
-          }% chance of precipitation.`
+          }% chance of precipitation. Temperatures reaching as low as ${
+            body.daily.data[0].temperatureLow
+          } and up to ${body.daily.data[0].temperatureHigh} degrees.`
       );
     }
   });
